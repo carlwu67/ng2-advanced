@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormArray, Validators, FormGroup,FormBuilder} from '@angular/forms'
 
+import { myValidator } from './shared/myValidators';
+
 @Component({
   selector: 'app-reactive-forms-classic',
   templateUrl: './reactive-forms-classic.component.html',
@@ -25,11 +27,15 @@ export class ReactiveFormsClassicComponent implements OnInit {
   getFieldInvalid(fieldName) {
     return this.form.controls[fieldName].invalid;
   }
+   getGroupFieldInvalid(fieldName, prefix="") {
+    return this.form.get(prefix+fieldName).invalid;
+  }
   ngOnInit() {
     this.form.addControl('mail',this.fb.control('default@example.com',Validators.required));
 
     let group1:FormArray=<FormArray>this.form.controls['group1'];
-    group1.insert(group1.length,this.fb.control('Array 5',Validators.required));
+
+    group1.insert(group1.length,this.fb.control('Array 5',myValidator));
   }
 
 }
