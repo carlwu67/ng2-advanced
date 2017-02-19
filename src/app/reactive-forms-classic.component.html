@@ -4,6 +4,8 @@
         <p class="mb-lg">Standard Bootstrap form and input controls with customized UI variations</p>
         <pre>
           {{form.value| json}}
+          invalid:{{form.invalid}}
+          group1.4 invalid:{{form.get('group1.4').invalid}}
         </pre>
         <div class="card">
             <div class="card-body">
