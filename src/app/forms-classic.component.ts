@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forms-classic.component.css']
 })
 export class FormsClassicComponent implements OnInit {
+  forms:Formclass=new Formclass();
+  constructor() {
 
-  constructor() { }
+
+  }
 
   ngOnInit() {
+
+
   }
+
+}
+
+ class Formclass{
+   RoundedCorners:string;
+
 
 }
