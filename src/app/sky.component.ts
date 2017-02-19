@@ -1,5 +1,5 @@
 import {NgModel} from '@angular/forms';
-import { ElementRef, Input, Component, OnInit, ViewChild } from '@angular/core';
+import { ContentChild,ElementRef, Input, Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-sky',
@@ -8,16 +8,26 @@ import { ElementRef, Input, Component, OnInit, ViewChild } from '@angular/core';
 })
 export class SkyComponent implements OnInit {
 
-@Input() name:string="Sky red";
+@Input() name:string;
 
-@ViewChild('input')
-  input: NgModel;
+@ViewChild('input') input: NgModel;
 
 @ViewChild('input1') input1:ElementRef;
+
+@Input() titleimgsrc:string;
+
+  @ContentChild('btn')
+  btn: ElementRef;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+    getCounter() {
+    if(this.btn) {
+      console.log(this.btn.nativeElement.innerText);
+    }
   }
 
 }

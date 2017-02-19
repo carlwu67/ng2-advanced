@@ -1,5 +1,5 @@
 import { SkyComponent } from './sky.component';
-import { ViewChild,Component, OnInit } from '@angular/core';
+import { ViewChildren, QueryList,ElementRef,ViewChild,Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute  } from '@angular/router';
 
 
@@ -12,6 +12,12 @@ export class CardsComponent implements OnInit {
 
   @ViewChild(SkyComponent)
   sky: SkyComponent;
+
+    @ViewChildren(SkyComponent)
+  skies: QueryList<SkyComponent>;
+
+
+counter = 0;
 
   type:string;
   constructor(private router:Router,private route:ActivatedRoute) {
@@ -32,11 +38,21 @@ export class CardsComponent implements OnInit {
 
   ngAfterViewInit() {
     console.log(this.sky.name);
+
+    this.skies.forEach(x => {
+      console.log(x.titleimgsrc);
+    });
   }
 
-checkSkyInputDirty() {
+
+
+  incCounter() {
+    this.counter++;
+  }
+
+  checkSkyInputDirty() {
     console.log(this.sky.input.dirty);
-    console.log(this.sky.input1.nativeElement['value']);
+    console.log(this.sky.input1.nativeElement.value);
   }
 
 }
