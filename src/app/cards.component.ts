@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { SkyComponent } from './sky.component';
+import { ViewChild,Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute  } from '@angular/router';
+
 
 @Component({
   selector: 'app-cards',
@@ -7,9 +9,13 @@ import { Router,ActivatedRoute  } from '@angular/router';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
+
+  @ViewChild(SkyComponent)
+  sky: SkyComponent;
+
   type:string;
   constructor(private router:Router,private route:ActivatedRoute) {
-    
+
    }
 
   ngOnInit() {
@@ -24,5 +30,13 @@ export class CardsComponent implements OnInit {
     this.router.navigateByUrl('/cards/'+type);
   }
 
+  ngAfterViewInit() {
+    console.log(this.sky.name);
+  }
+
+checkSkyInputDirty() {
+    console.log(this.sky.input.dirty);
+    console.log(this.sky.input1.nativeElement['value']);
+  }
 
 }

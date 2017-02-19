@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard.component';
 import { CardsComponent } from './cards.component';
 import { FormsClassicComponent } from './forms-classic.component';
 import { ReactiveFormsClassicComponent } from './reactive-forms-classic.component';
+import { SkyComponent } from './sky.component';
 
 
 
@@ -19,7 +20,8 @@ import { ReactiveFormsClassicComponent } from './reactive-forms-classic.componen
     DashboardComponent,
     CardsComponent,
     FormsClassicComponent,
-    ReactiveFormsClassicComponent
+    ReactiveFormsClassicComponent,
+    SkyComponent
 
   ],
   imports: [
