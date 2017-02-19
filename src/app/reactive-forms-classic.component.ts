@@ -15,7 +15,9 @@ export class ReactiveFormsClassicComponent implements OnInit {
     });
 
    }
-
+  getFieldInvalid(fieldName) {
+    return this.form.controls[fieldName].invalid;
+  }
   ngOnInit() {
     this.form.addControl('mail',this.fb.control('default@example.com',Validators.required));
   }
