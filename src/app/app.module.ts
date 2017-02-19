@@ -12,6 +12,10 @@ import { FormsClassicComponent } from './forms-classic.component';
 import { ReactiveFormsClassicComponent } from './reactive-forms-classic.component';
 import { SkyComponent } from './sky.component';
 import { ApplyCounterDirective } from './apply-counter.directive';
+import { LoginComponent } from './login.component';
+import { LayoutComponent } from './layout.component';
+import { LoginRouteGuard } from './login-route-guard';
+import { InputRouteGuard } from './input-route-guard';
 
 
 
@@ -23,7 +27,9 @@ import { ApplyCounterDirective } from './apply-counter.directive';
     FormsClassicComponent,
     ReactiveFormsClassicComponent,
     SkyComponent,
-    ApplyCounterDirective
+    ApplyCounterDirective,
+    LoginComponent,
+    LayoutComponent
 
   ],
   imports: [
@@ -33,7 +39,7 @@ import { ApplyCounterDirective } from './apply-counter.directive';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LoginRouteGuard,InputRouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
