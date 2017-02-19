@@ -11,7 +11,7 @@ export class ReactiveFormsClassicComponent implements OnInit {
   form:FormGroup;
   constructor(private fb:FormBuilder) {
     this.form = this.fb.group({
-      name: ['Will', Validators.required],
+      name: ['Will', [Validators.required, Validators.minLength(3)]],
       group1:this.fb.array([
         this.fb.control('Array 1',Validators.required),
         this.fb.control('Array 2',Validators.required),
