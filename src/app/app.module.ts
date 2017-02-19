@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard.component';
 import { CardsComponent } from './cards.component';
 import { FormsClassicComponent } from './forms-classic.component';
+import { ReactiveFormsClassicComponent } from './reactive-forms-classic.component';
 
 
 
@@ -17,7 +18,8 @@ import { FormsClassicComponent } from './forms-classic.component';
     AppComponent,
     DashboardComponent,
     CardsComponent,
-    FormsClassicComponent
+    FormsClassicComponent,
+    ReactiveFormsClassicComponent
 
   ],
   imports: [

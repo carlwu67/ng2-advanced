@@ -2,6 +2,7 @@ import { CardsComponent } from './cards.component';
 import { DashboardComponent } from './dashboard.component';
 import { AppComponent } from './app.component';
 import { FormsClassicComponent } from './forms-classic.component';
+import { ReactiveFormsClassicComponent } from './reactive-forms-classic.component';
 import { NgModule } from '@angular/core';
 import { Route, Routes, RouterModule, ActivatedRoute, Router,PreloadAllModules } from '@angular/router';
 import { fallbackRoute } from './shared/fallback-router';
@@ -16,6 +17,7 @@ const routes: Routes = [
   //{ path: '', component: FormsClassicComponent },
  // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path:  'forms',component:FormsClassicComponent},
+  { path:  'reactiveforms',component:ReactiveFormsClassicComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'cards', component: CardsComponent },
   { path: 'cards/:type', component: CardsComponent },
