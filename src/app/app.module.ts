@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard.component';
 import { CardsComponent } from './cards.component';
+import { FormsClassicComponent } from './forms-classic.component';
 
 
 
@@ -15,7 +16,8 @@ import { CardsComponent } from './cards.component';
   declarations: [
     AppComponent,
     DashboardComponent,
-    CardsComponent
+    CardsComponent,
+    FormsClassicComponent
 
   ],
   imports: [
